@@ -5,19 +5,19 @@
  */
 function calculateRentalCost(days) {
   // write code here
-  const forfifty = 7;
-  const fortwenty = 3;
+  const LONG_TERM_RENTAL_DAYS = 7;
+  const MID_TERM_RENTAL_DAYS = 3;
   const discounttwenty = 20;
   const discountfifty = 50;
-  const carcost = 40;
-  const rentalcost = days * carcost;
+  const COST_PER_DAY = 40;
+  const rentalcost = days * COST_PER_DAY;
 
-  if (days >= fortwenty && days < forfifty) {
-    return rentalcost - discounttwenty;
+  if (days >= LONG_TERM_RENTAL_DAYS) {
+    return rentalcost - discountfifty;
   }
 
-  if (days >= forfifty) {
-    return rentalcost - discountfifty;
+  if (days >= MID_TERM_RENTAL_DAYS) {
+    return rentalcost - discounttwenty;
   }
 
   return rentalcost;
